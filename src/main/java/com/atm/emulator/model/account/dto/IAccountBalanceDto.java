@@ -10,11 +10,17 @@ import java.time.LocalDateTime;
 @Projection(types = AccountEntity.class)
 public interface IAccountBalanceDto {
 
+    @Value("#{target.bank.name} ")
+    String getBankName();
+
+    String getAccountName();
+
     @Value("#{target.balance} ")
     long getBalance();
 
     @Value("#{target.customer?.firstName} #{target.customer?.lastName}")
     String getCustomerName();
+
 
     LocalDateTime getUpdateTime();
 

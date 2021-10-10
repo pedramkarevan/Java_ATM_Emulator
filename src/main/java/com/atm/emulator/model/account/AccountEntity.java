@@ -1,7 +1,7 @@
 package com.atm.emulator.model.account;
 
 
-
+import com.atm.emulator.model.bank.BankEntity;
 import com.atm.emulator.model.core.IEntity;
 import com.atm.emulator.model.customer.CustomerEntity;
 
@@ -22,6 +22,14 @@ public class AccountEntity implements IEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
     private CustomerEntity customer;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bank_id")
+    private BankEntity bank;
+
+    //Better approch would be a association between account Types and account
+    @Column(name = "account_name")
+    private String accountName;
 
     @Column(name = "updateTiem")
     private LocalDateTime updateTime;
@@ -60,4 +68,19 @@ public class AccountEntity implements IEntity {
         this.updateTime = updateTime;
     }
 
+    public BankEntity getBank() {
+        return bank;
+    }
+
+    public void setBank(BankEntity bank) {
+        this.bank = bank;
+    }
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
 }
