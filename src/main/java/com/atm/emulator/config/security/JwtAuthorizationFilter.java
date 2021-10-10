@@ -1,7 +1,5 @@
 package com.atm.emulator.config.security;
 
-
-import com.atm.emulator.exception.BaseException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jws;
