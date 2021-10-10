@@ -10,12 +10,10 @@ import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 
-import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 public class JwtService {
 

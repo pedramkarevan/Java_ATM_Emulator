@@ -2,7 +2,6 @@ package com.atm.emulator.config.security;
 
 public class JwtRequest {
 
-	//@CustomValidate(message = "String is not valid")
 	private String cardNo;
 	private String pin;
 

@@ -1,7 +1,5 @@
 package com.atm.emulator.controller;
 
-
-import com.atm.emulator.exception.BaseException;
 import com.atm.emulator.model.account.dto.AccountPartialDto;
 import com.atm.emulator.model.account.dto.IAccountBalanceDto;
 import com.atm.emulator.model.customer.CustomerEntity;

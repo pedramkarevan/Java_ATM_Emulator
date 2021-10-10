@@ -45,12 +45,6 @@ import java.util.Arrays;
 
 
 @Configuration
-/*@EnableAutoConfiguration(exclude = {
-
-        org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration.class,
-       *//* org.springframework.boot.autoconfigure.security.FallbackWebSecurityAutoConfiguration.class,
-        org.springframework.boot.autoconfigure.security.oauth2.OAuth2AutoConfiguration.class*//*
-})*/
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 @ComponentScan(basePackages = {"com.atm.emulator.controller"})
