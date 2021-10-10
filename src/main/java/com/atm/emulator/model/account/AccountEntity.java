@@ -52,7 +52,7 @@ public class AccountEntity implements IEntity {
         return customer;
     }
 
-    public Long getBalance() {
+    public Long getBalance(long l) {
         return balance;
     }
 

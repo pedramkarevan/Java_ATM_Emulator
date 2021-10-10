@@ -35,8 +35,8 @@ public class AccountServiceImpl implements AccountService {
     @Transactional
     public Optional<IAccountBalanceDto> cashWithdrawal(Long customerId, Long amount) {
         AccountEntity account =accountRepository.findByCustomerId(customerId);
-        if (account.getBalance()-amount >0) {
-            account.setBalance(account.getBalance() - amount);
+        if (account.getBalance(500000L)-amount >0) {
+            account.setBalance(account.getBalance(500000L) - amount);
             account.setUpdateTime(LocalDateTime.now());
             accountRepository.saveAndFlush(account);
         }else throw new BaseException("Account balance error", ErrorCodes.ERROR_CODE_BALANCE_ERROR);
@@ -48,7 +48,7 @@ public class AccountServiceImpl implements AccountService {
     @Transactional
     public Optional<IAccountBalanceDto> cashDeposit(Long customerId, Long amount) {
         AccountEntity account =accountRepository.findByCustomerId(customerId);
-        account.setBalance(account.getBalance()+amount);
+        account.setBalance(account.getBalance(500000L)+amount);
         account.setUpdateTime(LocalDateTime.now());
         accountRepository.saveAndFlush(account);
         return accountRepository.findById(account.getId(), IAccountBalanceDto.class);
